@@ -18,7 +18,7 @@ jobs:
           go-version: 1.19
 
       - name: Build
-        run: go build -o gslite -v main.go
+        run: CGO_ENABLED=0 go build -o gslite -v main.go
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
